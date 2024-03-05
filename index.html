@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Túc Tour Coming Soon...</title>
+    <style>
+        body {
+            color: #fff;
+            text-align: center;
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-image: url('./HNJAJAJKJAKA.jpg');
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url('./HNJAJAJKJAKA.jpg');
+            color: white;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        @keyframes fadeIn {
+            from {
+                top: 20%;
+                opacity: 0;
+            }
+
+            to {
+                top: 100;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            from {
+                top: 20%;
+                opacity: 0;
+            }
+
+            to {
+                top: 100;
+                opacity: 1;
+            }
+        }
+
+        .wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            animation: fadeIn 1000ms ease;
+            -webkit-animation: fadeIn 1000ms ease;
+
+        }
+
+        h1 {
+            font-size: 64px;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .dot {
+            color: #ecff43;
+        }
+
+        p {
+            text-align: center;
+            margin: 18px;
+            font-family: 'Muli', sans-serif;
+            font-weight: normal;
+        }
+
+        .icons {
+            text-align: center;
+        }
+
+        .icons i {
+            color: #1a5300;
+            background: #fff;
+            height: 15px;
+            width: 15px;
+            padding: 13px;
+            margin: 0 10px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 200ms ease;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .icons i:hover,
+        .icons i:active {
+            color: #fff;
+            background: none;
+            border-color: #fff;
+            cursor: pointer !important;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            text-decoration: none;
+        }
+
+        .count {
+            margin-top: 2rem;
+        }
+
+        .countd {
+            display: inline-block;
+            width: 6.5rem;
+            height: 6.5rem;
+            border: 2px solid;
+            border-radius: 50%;
+            margin: 0 1.5rem 1.5rem;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .countd>span {
+            display: block;
+            font-size: 2rem;
+            margin-top: 1.6rem;
+        }
+
+        .img {
+            max-width: 150px;
+            border-radius: 12%;
+        }
+
+        .tuc {
+            background-color: #85FFBD;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px #020202;
+        }
+
+        @media screen and (max-width: 1536px) {
+            .wrapper {
+                max-width: 1366px;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            .wrapper {
+                max-width: 1024px;
+            }
+            
+        }
+
+        @media screen and (max-width: 1024px) {
+            .wrapper {
+                max-width: 768px;
+            }
+            .tuc {
+                line-height: 100px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .wrapper {
+                max-width: 640px;
+            }
+            .tuc {
+                line-height: 100px;
+            }
+			.countd {
+				width: 3.5rem;
+				height: 3.5rem;
+			}
+			.countd>span {
+				font-size: 1rem;
+				margin-top: .5rem;
+			}
+        }
+
+        @media screen and (max-width: 640px) {
+            .wrapper {
+                max-width: 475px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="wrapper">
+            <img src="./tucFlag.png" alt="" class="img">
+            <h1><span class="tuc">Túc Tour</span> Coming soon<span class="dot">.</span></h1>
+            <p>We are building our website.</p>
+            <div class="icons">
+                <a href="https://www.facebook.com/profile.php?id=100094247408974"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <div class="count">
+                <div class="countd">
+                    <span id="days">00</span>
+                    days
+                </div>
+                <div class="countd">
+                    <span id="hours">00</span>
+                    hours
+                </div>
+                <div class="countd">
+                    <span id="mins">00</span>
+                    minutes
+                </div>
+                <div class="countd">
+                    <span id="secs">00</span>
+                    seconds
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    var count = new Date("may 2,2024 00:00:00").getTime();
+    var x = setInterval(function () {
+        var now = new Date().getTime();
+        var d = count - now;
+        var days = Math.floor(d / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((d % (1000 * 60)) / 1000);
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("mins").innerHTML = minutes;
+        document.getElementById("secs").innerHTML = seconds;
+    }, 1000);
+</script>
+
+</html>
